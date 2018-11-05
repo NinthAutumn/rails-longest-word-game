@@ -1,0 +1,30 @@
+
+
+
+
+
+
+<div class="container">
+  <h1 id="head">RESULT</h1>
+    <% if @english == false %>
+    <p><em><i><%= @guessed %></i></em> is not a valid word!</p>
+    <% elsif @correct == true && @english == true %>
+    <p><strong>Congratulation!</strong> ><em><i><%= @guessed %></i></em> is a valid word!</p>
+    <%else%>
+    <div class= "rap">
+      <p><strong><i><%= @guessed %></i></strong> cannot be built from </p>
+    <div class="lef">
+      <ul class="list-inline">
+      <% @letters.each do |element| %>
+        <li><strong><%= element %></strong></li>
+      <% end %>
+    </ul>
+    </div>
+
+    </div>
+
+  <% end %>
+
+  <%= link_to "Guess another word", "/new", class: "btn btn-danger" %>
+</div>
+

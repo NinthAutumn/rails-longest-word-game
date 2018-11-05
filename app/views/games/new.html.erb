@@ -1,0 +1,17 @@
+
+<h1 class="text-center">Longest words game!</h1>
+
+<center>
+  <ul class="list-inline">
+  <% @letters.each do |element| %>
+    <li class="btn btn-primary btn-lg lane"><%= element %></li>
+  <% end %>
+</ul>
+
+<form action="/score" method="post" class="form-inline">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="guess" class="form-control input-lg">
+  <input type="submit" value="play" class="btn btn-primary  btn-lg">
+</form>
+</center>
+
